@@ -31,55 +31,55 @@ class Test_Newfronthooks extends Module
     public function install(): bool
     {
         return parent::install() && $this->registerHook([
-            'actionFrontControllerAuthenticationInitBefore',
-            'actionFrontControllerAuthenticationInitAfter',
-            'actionFrontControllerAuthenticationSetVariablesBefore',
-            'actionFrontControllerAuthenticationSetVariables',
-            'actionBuildFrontAuthenticationEndObject',
-            'displayAuthenticationHeader',
-            'actionOutputAuthenticationHTMLBefore',
-            'actionFrontControllerAuthenticationSetMedia',
-        ]);
+                'actionAuthControllerInitBefore',
+                'actionAuthControllerInitAfter',
+                'actionAuthControllerSetVariablesBefore',
+                'actionAuthControllerSetVariables',
+                'actionBuildAuthControllerFrontEndObject',
+                'displayAuthControllerHeader',
+                'actionOutputAuthControllerHTMLBefore',
+                'actionAuthControllerSetMedia',
+            ]);
     }
 
-    public function hookActionFrontControllerAuthenticationInitBefore(): void
+    public function hookActionAuthControllerInitBefore(): void
     {
-        echo 'hookActionFrontControllerAuthenticationInitBefore' . '<br>';
+        echo 'hookActionAuthControllerInitBefore' . '<br>';
     }
 
-    public function hookActionFrontControllerAuthenticationInitAfter(): void
+    public function hookActionAuthControllerInitAfter(): void
     {
-        echo 'hookActionFrontControllerAuthenticationInitAfter' . '<br>';
+        echo 'hookActionAuthControllerInitAfter' . '<br>';
     }
 
-    public function hookActionFrontControllerAuthenticationSetVariablesBefore(): void
+    public function hookActionAuthControllerSetVariablesBefore(): void
     {
-        echo 'hookActionFrontControllerAuthenticationSetVariablesBefore' . '<br>';
+        echo 'hookActionAuthControllerSetVariablesBefore' . '<br>';
     }
 
-    public function hookActionFrontControllerAuthenticationSetVariables(): void
+    public function hookActionAuthControllerSetVariables(): void
     {
-        echo 'hookActionFrontControllerAuthenticationSetVariables' . '<br>';
+        echo 'hookActionAuthControllerSetVariables' . '<br>';
     }
 
-    public function hookActionBuildFrontAuthenticationEndObject(): void
+    public function hookActionBuildAuthControllerFrontEndObject(): void
     {
-        echo 'hookActionBuildFrontAuthenticationEndObject' . '<br>';
+        echo 'hookActionBuildAuthControllerFrontEndObject' . '<br>';
     }
 
-    public function hookDisplayAuthenticationHeader(): void
+    public function hookDisplayAuthControllerHeader(): void
     {
-        echo 'hookDisplayAuthenticationHeader' . '<br>';
+        echo 'hookDisplayAuthControllerHeader' . '<br>';
     }
 
-    public function hookActionOutputAuthenticationHTMLBefore(): void
+    public function hookActionOutputAuthControllerHTMLBefore(): void
     {
-        echo 'hookActionOutputAuthenticationHTMLBefore' . '<br>';
+        echo 'hookActionOutputAuthControllerHTMLBefore' . '<br>';
         die;
     }
 
-    public function hookActionFrontControllerAuthenticationSetMedia(): void
+    public function hookActionAuthControllerSetMedia(): void
     {
-        echo 'hookActionFrontControllerAuthenticationSetMedia' . '<br>';
+        echo 'hookActionAuthControllerSetMedia' . '<br>';
     }
 }
